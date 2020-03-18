@@ -1,32 +1,21 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <div id="nav"></div>
+    <router-view />
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+const express = require("express");
+const cors = require("cors");
+const app = express();
 
-#nav {
-  padding: 30px;
+const beansRouter = require("./routes/beans");
+const PORT = 5000;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+app.use(cors());
+app.use(express.json());
+app.use("/api/beans", beansRouter);
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+app.listen(5000, () => console.log(`Server started on port ${PORT}`));
+</script>
