@@ -1,3 +1,3 @@
 <template>
-  <div id="orderConfirmation"></div>
+  <div id="orderStatus"></div>
 </template>

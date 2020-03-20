@@ -1,5 +1,5 @@
 <template>
-  <div id="Home">
+  <div id="Home" @click="goToAbout">
     <div id="homeImgContainer">
       <img src="@/assets/graphics/intro-graphic-left.svg" alt="left" />
       <img src="@/assets/graphics/airbean-landing.svg" />
@@ -10,7 +10,12 @@
 <script>
 export default {
   name: "Home",
-  components: {}
+  components: {},
+  methods: {
+    goToAbout() {
+      this.$router.push("/about");
+    }
+  }
 };
 </script>
 <style scoped>
