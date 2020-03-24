@@ -1,5 +1,36 @@
 const state = {
-  cart: []
+  cart: [
+    {
+      id: 2,
+      title: "Kaffe Doppio",
+      desc: "Bryggd på månadens bönor",
+      price: 49
+    },
+    {
+      id: 2,
+      title: "Kaffe Doppio",
+      desc: "Bryggd på månadens bönor",
+      price: 49
+    },
+    {
+      id: 3,
+      title: "Cappuccino",
+      desc: "Bryggd på månadens bönor",
+      price: 49
+    },
+    {
+      id: 4,
+      title: "Latte Macchiato",
+      desc: "Bryggd på månadens bönor",
+      price: 49
+    },
+    {
+      id: 5,
+      title: "Kaffe Latte",
+      desc: "Bryggd på månadens bönor",
+      price: 54
+    }
+  ]
 };
 
 const mutations = {
