@@ -1,3 +1,4 @@
+import { getMenu } from "../../api";
 const state = {
   menu: []
 };
@@ -9,8 +10,7 @@ const mutations = {
 };
 const actions = {
   async fetchMenu({ commit }) {
-    const response = await fetch("http://localhost:5000/api/beans");
-    const data = await response.json();
+    const data = await getMenu();
     commit("setMenu", data.menu);
   }
 };
