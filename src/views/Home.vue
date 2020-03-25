@@ -10,7 +10,6 @@
 <script>
 export default {
   name: "Home",
-  components: {},
   methods: {
     goToAbout() {
       this.$router.push("/about");

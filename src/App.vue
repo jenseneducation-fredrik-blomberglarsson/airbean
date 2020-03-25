@@ -5,7 +5,7 @@
   </div>
 </template>
 
- <script>
+<script>
 // const express = require("express"); Bör flyttas ut!
 // const cors = require("cors");
 // const app = express();
@@ -20,3 +20,8 @@
 // app.listen(5000, () => console.log(`Server started on port ${PORT}`));
 //
 </script>
+<style>
+body {
+  margin: 0px;
+}
+</style>
