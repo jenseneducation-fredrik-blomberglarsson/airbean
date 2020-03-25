@@ -1,8 +1,8 @@
 <template>
   <div id="About">
     <section class="content">
-      <img class="imgHeader" src="@/assets/graphics/graphics-header.svg" alt="header" />
-      <HamburgerMenu />
+      <div class="imgHeader"></div>
+      <HamburgerIcon />
       <h1>Vårt Kaffe</h1>
       <strong>
         Pumpkin spice mug, barista cup, sit
@@ -41,25 +41,31 @@
       <img class="imgAvatar" src="@/assets/graphics/eva-cortado.jpg" alt="avatarImg" />
       <h2 class="avatarName">Eva Cortado</h2>
       <h4 class="avatarText">VD & Grundare</h4>
-      <img class="imgFooter" src="@/assets/graphics/graphics-footer.svg" alt="footerImg" />
     </footer>
   </div>
 </template>
 <script>
-import HamburgerMenu from "@/components/HamburgerMenu";
+import HamburgerIcon from "@/components/HamburgerIcon";
 export default {
-  name: "Home",
-  components: { HamburgerMenu }
+  name: "About",
+  components: { HamburgerIcon }
 };
 </script>
 <style scoped>
 #About {
+  height: 150vh;
   width: 450px;
   margin: 0 auto;
   background-color: rgb(241, 228, 231);
   display: flex;
   flex-direction: column;
+  background-image: url(../assets/graphics/graphics-header.svg),
+    url(../assets/graphics/graphics-footer.svg);
+  background-size: 100%, 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-position: top, bottom;
 }
+
 h1,
 p,
 strong {
@@ -70,6 +76,7 @@ strong {
   flex-direction: column;
 }
 h1 {
+  margin-top: 15%;
   font-size: 3rem;
 }
 p {
@@ -80,15 +87,8 @@ footer {
   text-align: center;
 }
 
-.imgHeader {
-  width: 100%;
-}
-
 .imgAvatar {
   margin-top: 5%;
   border-radius: 50px;
-}
-.imgFooter {
-  width: 100%;
 }
 </style>

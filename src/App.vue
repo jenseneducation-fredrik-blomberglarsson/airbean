@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <div id="nav"></div>
     <router-view />
   </div>
 </template>
 
- <script>
+
+<script>
+export default {
+  name: "App",
+  components: {}
+  /*   computed: {
+    showHamburger() {
+      return this.$store.state.showHamburger;
+    }
+  } */
+};
 // const express = require("express"); Bör flyttas ut!
 // const cors = require("cors");
 // const app = express();
