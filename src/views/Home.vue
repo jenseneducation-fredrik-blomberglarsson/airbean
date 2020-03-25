@@ -1,6 +1,5 @@
 <template>
   <div id="Home" @click="goToAbout">
-    <Cart />
     <div id="homeImgContainer">
       <img src="@/assets/graphics/intro-graphic-left.svg" alt="left" />
       <img src="@/assets/graphics/airbean-landing.svg" />
@@ -9,12 +8,8 @@
   </div>
 </template>
 <script>
-import Cart from "../components/Cart.vue";
 export default {
   name: "Home",
-  components: {
-    Cart
-  },
   methods: {
     goToAbout() {
       this.$router.push("/about");
