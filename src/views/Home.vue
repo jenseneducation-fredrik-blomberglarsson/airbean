@@ -1,5 +1,5 @@
 <template>
-  <div id="Home" @click="goToAbout">
+  <div id="Home">
     <div id="homeImgContainer">
       <img src="@/assets/graphics/intro-graphic-left.svg" alt="left" />
       <img src="@/assets/graphics/airbean-landing.svg" />
@@ -10,10 +10,10 @@
 <script>
 export default {
   name: "Home",
-  methods: {
-    goToAbout() {
+  mounted() {
+    setTimeout(() => {
       this.$router.push("/about");
-    }
+    }, 2500);
   }
 };
 </script>
