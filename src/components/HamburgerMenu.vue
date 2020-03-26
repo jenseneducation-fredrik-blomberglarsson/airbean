@@ -1,28 +1,20 @@
 <template>
-  <nav id="hamburgerMenu" v-if="show">
-    <img class="close" src="./../assets/graphics/close.svg" alt="close" @click="close" />
-    <router-link v-on:click.native="close" to="/menu" class="router-link">Meny</router-link>
+  <nav id="hamburgerMenu" v-if="showHamburger">
+    <img class="close" src="./../assets/graphics/close.svg" alt="close" @click="show" />
+    <router-link v-on:click.native="show" to="/menu" class="router-link">Meny</router-link>
     <hr class="hr" />
-    <router-link v-on:click.native="close" to="/about" class="router-link">Vårt Kaffe</router-link>
+    <router-link v-on:click.native="show" to="/about" class="router-link">Vårt Kaffe</router-link>
     <hr class="hr" />
-    <router-link v-on:click.native="close" to="/status" class="router-link">Orderstatus</router-link>
+    <router-link v-on:click.native="show" to="/status" class="router-link">Orderstatus</router-link>
   </nav>
 </template>
 
 <script>
+import { mapGetters, mapActions } from "vuex";
 export default {
   name: "HamburgerMenu",
-
-  methods: {
-    close() {
-      this.$store.commit("show");
-    }
-  },
-  computed: {
-    show() {
-      return this.$store.state.showHamburger;
-    }
-  }
+  methods: mapActions(["show"]),
+  computed: mapGetters(["showHamburger"])
 };
 </script>
 
