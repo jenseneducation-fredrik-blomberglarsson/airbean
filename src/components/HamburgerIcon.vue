@@ -12,17 +12,13 @@
 
 <script>
 import HamburgerMenu from "@/components/HamburgerMenu.vue";
+import { mapActions } from "vuex";
 export default {
   name: "HamburgerIcon",
   components: {
     HamburgerMenu
   },
-
-  methods: {
-    show() {
-      this.$store.commit("show");
-    }
-  }
+  methods: mapActions(["show"])
 };
 </script>
 

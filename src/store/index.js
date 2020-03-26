@@ -3,7 +3,6 @@ import Vuex from "vuex";
 import cart from "./modules/cart";
 import menu from "./modules/menu";
 
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -11,11 +10,17 @@ export default new Vuex.Store({
   state: {
     showHamburger: false
   },
-
+  actions: {
+    show({ commit }) {
+      commit("show");
+    }
+  },
+  getters: {
+    showHamburger: state => state.showHamburger
+  },
   mutations: {
     show(state) {
-      state.showHamburger = !state.showHamburger
+      state.showHamburger = !state.showHamburger;
     }
   }
-
 });
