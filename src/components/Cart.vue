@@ -13,7 +13,7 @@
         <div class="totalAndPrice">
           <h3>Total</h3>
           <div class="spacing" />
-          <h3>XXX kr</h3>
+          <h3>{{totalPrice()}} kr</h3>
         </div>
         <div class="priceInfo">
           <p>inkl moms + drönarleverans</p>
@@ -64,11 +64,20 @@ export default {
         }
       });
       return result;
+    },
+    totalPrice() {
+      let price = 0;
+      this.cart.forEach(item => {
+        price = price + item.price;
+      });
+      return price;
     }
   }
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans&display=swap");
+
 #cart {
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
@@ -85,7 +94,6 @@ export default {
   right: 2em;
   bottom: 2em;
   left: 2em;
-
   background-color: white;
   border-radius: 0.2em;
 }
@@ -100,12 +108,14 @@ h1 {
   display: flex;
   height: 2em;
   font-size: 3em;
+  font-family: "PT Serif", serif;
 }
 
 h3 {
   display: flex;
-  font-size: 2em;
+  font-size: 2.2em;
   margin: 0;
+  font-family: "PT Serif", serif;
 }
 
 .spacing {
@@ -119,7 +129,6 @@ h3 {
 }
 
 p {
-  display: flex;
   margin: 0;
 }
 
@@ -131,6 +140,8 @@ p {
 
 .priceInfo {
   display: flex;
+  font-family: "Work Sans", sans-serif;
+  font-size: 1.4em;
 }
 
 .verticalSpacing {

@@ -31,5 +31,6 @@ export default {
 p {
   font-size: 2em;
   margin: 0;
+  text-align: center;
 }
 </style>
