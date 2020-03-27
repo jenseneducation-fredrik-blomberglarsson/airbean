@@ -17,7 +17,17 @@ export default {
 </script>
 
 <style>
+html {
+  height: 100%;
+}
 body {
+  height: 100%;
   margin: 0px;
+}
+
+#app {
+  display: flex;
+  flex: 1;
+  height: 100%;
 }
 </style>
