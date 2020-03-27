@@ -1,6 +1,9 @@
 <template>
   <div id="cart">
     <div class="modalContainer">
+      <div id="triangleImgContainer">
+        <img id="triangle" src="@/assets/graphics/triangle.svg" />
+      </div>
       <h1>Din beställning</h1>
       <div class="cartContainer">
         <CartItem
@@ -79,18 +82,31 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans&display=swap");
 
 #cart {
+  display: flex;
   background-color: rgba(0, 0, 0, 0.5);
   position: fixed;
   height: 100%;
   width: 100%;
 }
+
+#triangleImgContainer {
+  position: fixed;
+  right: 4em;
+  top: 6em;
+}
+
+#triangle {
+  width: 3em;
+  height: 3em;
+}
+
 .modalContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   overflow: scroll;
-  top: 2em;
+  top: 8em;
   right: 2em;
   bottom: 2em;
   left: 2em;
