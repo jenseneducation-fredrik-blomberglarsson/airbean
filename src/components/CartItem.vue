@@ -24,7 +24,7 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans&display=swap");
 
 #cartItem {
-  font-size: 2em;
+  font-size: 1.2em;
   display: flex;
   justify-content: flex-end;
   align-items: center;

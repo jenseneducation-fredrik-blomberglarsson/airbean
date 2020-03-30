@@ -1,9 +1,14 @@
 <template>
   <div id="menu">
+    <img id="headerImg" src="@/assets/graphics/graphics-header.svg" />
     <HamburgerIcon class="hamburgerImage" />
-    <CartIcon class="cartIcon" />
+    <CartIcon />
     <h1>Meny</h1>
-    <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
+    <div id="menuItemWrapper">
+      <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
+    </div>
+
+    <img id="footerImg" src="@/assets/graphics/graphics-footer.svg" />
     <Cart v-if="showCart" />
   </div>
 </template>
@@ -30,27 +35,41 @@ export default {
 
 <style scoped>
 #menu {
-  height: 150vh;
-  width: 450px;
-  margin: 0 auto;
-  background-color: rgb(241, 228, 231);
+  height: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url(../assets/graphics/graphics-header.svg),
-    url(../assets/graphics/graphics-footer.svg);
-  background-size: 100%, 100%;
-  background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
+  background-color: rgb(241, 228, 231);
+}
+
+.menuItems {
+  z-index: 2;
+}
+
+#menuItemWrapper {
+  margin-bottom: 5em;
+}
+
+#headerImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#footerImg {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 h1 {
-  margin-top: 30%;
   font-size: 3rem;
   text-align: center;
+  margin-top: 2.2em;
 }
 
-.cartIcon {
-  margin-left: 80%;
-  margin-top: -13%;
+.hamburgerImage {
+  z-index: 1;
 }
 </style>

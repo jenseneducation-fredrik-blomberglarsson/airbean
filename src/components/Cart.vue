@@ -1,6 +1,5 @@
 <template>
   <div id="cart">
-    <img id="cartImg" src="@/assets/graphics/bag.svg" />
     <div class="modalContainer">
       <div id="triangleImgContainer">
         <img id="triangle" src="@/assets/graphics/triangle.svg" />
@@ -95,13 +94,10 @@ export default {
   width: 100%;
 }
 
-#cartImg {
-}
-
 #triangleImgContainer {
   position: fixed;
-  right: 4em;
-  top: 6em;
+  right: 2.2em;
+  top: 4.5em;
 }
 
 #triangle {
@@ -115,10 +111,10 @@ export default {
   align-items: center;
   position: absolute;
   overflow: scroll;
-  top: 8em;
-  right: 2em;
+  top: 6em;
+  right: 1.5em;
   bottom: 2em;
-  left: 2em;
+  left: 1.5em;
   background-color: white;
   border-radius: 0.2em;
 }
@@ -132,13 +128,13 @@ export default {
 h1 {
   display: flex;
   height: 2em;
-  font-size: 3em;
+  font-size: 2em;
   font-family: "PT Serif", serif;
 }
 
 h3 {
   display: flex;
-  font-size: 2.2em;
+  font-size: 1.2em;
   margin: 0;
   font-family: "PT Serif", serif;
 }
@@ -166,7 +162,7 @@ p {
 .priceInfo {
   display: flex;
   font-family: "Work Sans", sans-serif;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 .verticalSpacing {
@@ -178,6 +174,6 @@ p {
 .buttonContainer {
   display: flex;
   justify-content: center;
-  margin: 5em;
+  margin: 2em;
 }
 </style>

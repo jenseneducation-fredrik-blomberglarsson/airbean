@@ -1,9 +1,7 @@
 <template>
   <nav class="cartIcon">
     <img class="cartImage" src="./../assets/graphics/bag.svg" @click="showBag" />
-    <div class="iconTextWrapper">
-      <span>{{cart.length}}</span>
-    </div>
+    <span>{{cart.length}}</span>
   </nav>
 </template>
 
@@ -18,28 +16,31 @@ export default {
 
 <style lang="scss" scoped>
 .cartImage {
-  z-index: 200;
   cursor: pointer;
   background: black;
   padding: 1.5rem;
-  border-radius: 30px;
+  border-radius: 50px;
 }
 
-.iconTextWrapper {
+.cartIcon {
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  z-index: 1;
   display: flex;
-  justify-content: center;
-  margin-top: -85%;
-  margin-left: 15%;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
 span {
+  margin-left: -1em;
   color: white;
   line-height: 25px;
   height: 25px;
   width: 25px;
   display: table-cell;
   text-align: center;
-  border-radius: 50%; /* may require vendor prefixes */
+  border-radius: 50%;
   background: rgb(235, 94, 0);
 }
 </style>

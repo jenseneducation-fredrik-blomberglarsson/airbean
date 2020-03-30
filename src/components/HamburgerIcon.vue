@@ -24,9 +24,10 @@ export default {
 
 <style scoped>
 .HamburgerImage {
+  position: fixed;
+  top: 1em;
+  left: 1em;
   cursor: pointer;
-  margin-left: 5%;
-  margin-top: 5%;
   background: white;
   padding: 1rem;
   border-radius: 20px;
