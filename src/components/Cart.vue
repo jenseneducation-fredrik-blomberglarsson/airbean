@@ -45,8 +45,10 @@ export default {
   methods: {
     async onButtonClick() {
       const order = await placeOrder();
-      console.log(order);
-      // todo: send to confirmation page, not built yet
+      this.$router.push({
+        name: "OrderStatus",
+        params: { orderNum: order.orderNr, orderTime: order.eta }
+      });
     },
     countCart() {
       let result = [];
