@@ -1,6 +1,6 @@
 <template>
   <div id="menuItem">
-    <aside @click="addMenuItem">
+    <aside @click="addMenuItem(item)">
       <!-- <aside class="addItem" @click="addItem"> -->
       <img class="add" src="./../assets/graphics/add.svg" alt />
     </aside>
