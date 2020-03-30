@@ -1,5 +1,6 @@
 <template>
-  <div id="cart" v-if="showCart">
+  <div id="cart">
+    <img id="cartImg" src="@/assets/graphics/bag.svg" />
     <div class="modalContainer">
       <div id="triangleImgContainer">
         <img id="triangle" src="@/assets/graphics/triangle.svg" />
@@ -39,13 +40,14 @@ import Button from "../components/Button.vue";
 import { placeOrder } from "../api";
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
+
 export default {
   name: "Cart",
   components: {
     CartItem,
     Button
   },
-  computed: mapGetters(["cart", "showCart"]),
+  computed: mapGetters(["cart"]),
   methods: {
     ...mapActions(["showBag"]),
 
@@ -76,6 +78,7 @@ export default {
       this.cart.forEach(item => {
         price = price + item.price;
       });
+
       return price;
     }
   }
@@ -86,10 +89,13 @@ export default {
 
 #cart {
   display: flex;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   height: 100%;
   width: 100%;
+}
+
+#cartImg {
 }
 
 #triangleImgContainer {

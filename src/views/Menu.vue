@@ -4,10 +4,12 @@
     <CartIcon class="cartIcon" />
     <h1>Meny</h1>
     <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
+    <Cart v-if="showCart" />
   </div>
 </template>
 
 <script>
+import Cart from "@/components/Cart.vue";
 import HamburgerIcon from "@/components/HamburgerIcon";
 import CartIcon from "@/components/CartIcon";
 import MenuItem from "@/components/MenuItem";
@@ -15,10 +17,13 @@ import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 export default {
   name: "Menu",
-  components: { HamburgerIcon, CartIcon, MenuItem },
-  computed: mapGetters(["menu"]),
+  components: { HamburgerIcon, CartIcon, MenuItem, Cart },
+  computed: mapGetters(["menu", "showCart"]),
   methods: {
     ...mapActions(["fetchMenu"])
+  },
+  mounted() {
+    this.fetchMenu();
   }
 };
 </script>

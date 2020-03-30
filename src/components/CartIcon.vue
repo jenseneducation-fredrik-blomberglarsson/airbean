@@ -4,18 +4,13 @@
     <div class="iconTextWrapper">
       <span>{{cart.length}}</span>
     </div>
-    <Cart />
   </nav>
 </template>
 
 <script>
-import Cart from "@/components/Cart.vue";
 import { mapActions } from "vuex";
 import { mapGetters } from "vuex";
 export default {
-  components: {
-    Cart
-  },
   computed: mapGetters(["cart"]),
   methods: mapActions(["showBag"])
 };
