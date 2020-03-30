@@ -23,6 +23,7 @@ export default {
   height: 150vh;
   width: 450px;
   position: absolute;
+  top: 0;
   padding: 0;
   background: rgb(36, 8, 8);
 }

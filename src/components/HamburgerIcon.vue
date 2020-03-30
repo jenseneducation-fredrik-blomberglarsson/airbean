@@ -23,9 +23,6 @@ export default {
 </script>
 
 <style scoped>
-.hamburgerIcon {
-  display: flex;
-}
 .HamburgerImage {
   cursor: pointer;
   margin-left: 5%;

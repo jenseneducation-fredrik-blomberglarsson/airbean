@@ -1,5 +1,5 @@
 <template>
-  <div id="cart">
+  <div id="cart" v-if="showCart">
     <div class="modalContainer">
       <div id="triangleImgContainer">
         <img id="triangle" src="@/assets/graphics/triangle.svg" />
@@ -38,14 +38,17 @@ import CartItem from "../components/CartItem.vue";
 import Button from "../components/Button.vue";
 import { placeOrder } from "../api";
 import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
 export default {
   name: "Cart",
   components: {
     CartItem,
     Button
   },
-  computed: mapGetters(["cart"]),
+  computed: mapGetters(["cart", "showCart"]),
   methods: {
+    ...mapActions(["showBag"]),
+
     async onButtonClick() {
       const order = await placeOrder();
       console.log(order);
