@@ -1,7 +1,7 @@
 <template>
   <nav class="cartIcon">
     <img class="cartImage" src="./../assets/graphics/bag.svg" @click="showBag" />
-    <span>{{cart.length}}</span>
+    <span :style="{opacity: (cart.length > 0 ? 1 : 0)}">{{cart.length}}</span>
   </nav>
 </template>
 
