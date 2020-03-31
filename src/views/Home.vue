@@ -12,25 +12,22 @@ export default {
   name: "Home",
   mounted() {
     setTimeout(() => {
-      this.$router.push("/about");
+      this.$router.push("/menu");
     }, 2500);
   }
 };
 </script>
 <style scoped>
 #Home {
-  background-color: rgb(61, 126, 98);
-}
-
-#homeLogoContainer {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: rgb(61, 126, 98);
 }
 
 #homeImgContainer {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+  background-color: rgb(61, 126, 98);
 }
 </style>
