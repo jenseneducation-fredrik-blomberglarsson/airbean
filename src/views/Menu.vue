@@ -36,6 +36,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700|Work+Sans:300,600&display=swap");
 #menu {
   height: 100%;
   width: 100%;
@@ -44,11 +45,8 @@ export default {
   background-color: rgb(241, 228, 231);
 }
 
-.menuItems {
-  z-index: 2;
-}
-
 h1 {
+  font-family: "PT Serif", serif;
   font-size: 3rem;
   text-align: center;
 }
