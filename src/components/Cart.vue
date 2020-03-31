@@ -1,6 +1,9 @@
 <template>
   <div id="cart">
     <div class="modalContainer">
+      <div id="triangleImgContainer">
+        <img id="triangle" src="@/assets/graphics/triangle.svg" />
+      </div>
       <h1>Din beställning</h1>
       <div class="cartContainer">
         <CartItem
@@ -35,6 +38,8 @@ import CartItem from "../components/CartItem.vue";
 import Button from "../components/Button.vue";
 import { placeOrder } from "../api";
 import { mapGetters } from "vuex";
+import { mapActions } from "vuex";
+
 export default {
   name: "Cart",
   components: {
@@ -43,6 +48,8 @@ export default {
   },
   computed: mapGetters(["cart"]),
   methods: {
+    ...mapActions(["showBag"]),
+
     async onButtonClick() {
       const order = await placeOrder();
       this.$router.push({
@@ -72,6 +79,7 @@ export default {
       this.cart.forEach(item => {
         price = price + item.price;
       });
+
       return price;
     }
   }
@@ -81,21 +89,34 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans&display=swap");
 
 #cart {
-  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
   position: fixed;
   height: 100%;
   width: 100%;
 }
+
+#triangleImgContainer {
+  position: fixed;
+  right: 2.2em;
+  top: 4.5em;
+}
+
+#triangle {
+  width: 3em;
+  height: 3em;
+}
+
 .modalContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   position: absolute;
   overflow: scroll;
-  top: 2em;
-  right: 2em;
+  top: 6em;
+  right: 1.5em;
   bottom: 2em;
-  left: 2em;
+  left: 1.5em;
   background-color: white;
   border-radius: 0.2em;
 }
@@ -109,13 +130,13 @@ export default {
 h1 {
   display: flex;
   height: 2em;
-  font-size: 3em;
+  font-size: 2em;
   font-family: "PT Serif", serif;
 }
 
 h3 {
   display: flex;
-  font-size: 2.2em;
+  font-size: 1.2em;
   margin: 0;
   font-family: "PT Serif", serif;
 }
@@ -143,7 +164,7 @@ p {
 .priceInfo {
   display: flex;
   font-family: "Work Sans", sans-serif;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 
 .verticalSpacing {
@@ -155,6 +176,6 @@ p {
 .buttonContainer {
   display: flex;
   justify-content: center;
-  margin: 5em;
+  margin: 2em;
 }
 </style>
