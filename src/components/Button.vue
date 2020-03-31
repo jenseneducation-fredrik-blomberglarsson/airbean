@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=PT+Serif|Work+Sans&display=swap");
+
 #button {
   display: flex;
   justify-content: center;
@@ -32,5 +34,7 @@ p {
   font-size: 1.2em;
   margin: 0;
   text-align: center;
+  font-family: "PT Serif", serif;
+  font-weight: bolder;
 }
 </style>
