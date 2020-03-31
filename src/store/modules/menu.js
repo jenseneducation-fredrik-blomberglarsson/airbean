@@ -12,7 +12,7 @@ const actions = {
   async fetchMenu({ commit }) {
     const data = await getMenu();
     commit("setMenu", data.menu);
-  }
+  },
 };
 const getters = {
   menu: state => state.menu
