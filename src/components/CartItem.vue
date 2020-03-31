@@ -56,6 +56,7 @@ p {
 img {
   width: 0.7em;
   height: 0.7em;
+  cursor: pointer;
 }
 
 #spacing {

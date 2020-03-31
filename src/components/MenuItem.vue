@@ -35,6 +35,7 @@ export default {
   border-radius: 999em;
   padding: 5px;
   background-color: black;
+  cursor: pointer;
 }
 .title {
   grid-column: 2/3;
