@@ -1,10 +1,9 @@
 <template>
   <div id="orderStatus">
     <div id="orderNumber">
-      <p>
-        Ordernummer
-        <strong>{{orderNum}}</strong>
-      </p>
+      <p style="margin-right: 0.5em;">Ordernummer</p>
+
+      <strong>{{orderNum}}</strong>
     </div>
     <div id="droneImg">
       <img src="@/assets/graphics/drone.svg" />
@@ -13,9 +12,11 @@
       Din beställning
       <br />är på väg!
     </h1>
-    <h3>
-      <strong>{{orderTime}}</strong> minuter
-    </h3>
+    <div id="orderTime">
+      <strong style="margin-right: 0.5em;">{{orderTime}}</strong>
+
+      <p>minuter</p>
+    </div>
     <div class="spacing" />
     <Button title="Ok, cool!" background-color="white" v-bind:onClick="onButtonClick" />
   </div>
@@ -53,13 +54,26 @@ export default {
   overflow: scroll;
 }
 
+#orderNumber {
+  display: flex;
+}
+
+#orderTime {
+  display: flex;
+}
+
 p {
-  font-family: "PT Serif", serif;
+  display: flex;
+  font-family: "Work Sans", sans-serif;
   color: white;
+  margin: 0;
 }
 
 strong {
-  font-weight: 900;
+  display: flex;
+  font-weight: bolder;
+  color: white;
+  font-family: "Work Sans", sans-serif;
 }
 
 h1 {

@@ -1,14 +1,16 @@
 <template>
   <div id="menu">
-    <img id="headerImg" src="@/assets/graphics/graphics-header.svg" />
+    <img src="@/assets/graphics/graphics-header.svg" />
     <HamburgerIcon class="hamburgerImage" />
     <CartIcon />
     <h1>Meny</h1>
-    <div id="menuItemWrapper">
-      <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
-    </div>
 
-    <img id="footerImg" src="@/assets/graphics/graphics-footer.svg" />
+    <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
+
+    <img
+      style="background-color:rgb(241, 228, 231); margin-top:auto;"
+      src="@/assets/graphics/graphics-footer.svg"
+    />
     <Cart v-if="showCart" />
   </div>
 </template>
@@ -46,28 +48,9 @@ export default {
   z-index: 2;
 }
 
-#menuItemWrapper {
-  margin-bottom: 5em;
-}
-
-#headerImg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#footerImg {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 h1 {
   font-size: 3rem;
   text-align: center;
-  margin-top: 2.2em;
 }
 
 .hamburgerImage {

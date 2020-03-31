@@ -1,5 +1,6 @@
 <template>
   <div id="About">
+    <img id="footerImg" src="@/assets/graphics/graphics-header.svg" />
     <section class="content">
       <div class="imgHeader"></div>
       <HamburgerIcon />
@@ -41,6 +42,7 @@
       <img class="imgAvatar" src="@/assets/graphics/eva-cortado.jpg" alt="avatarImg" />
       <h2 class="avatarName">Eva Cortado</h2>
       <h4 class="avatarText">VD & Grundare</h4>
+      <img id="footerImg" src="@/assets/graphics/graphics-footer.svg" />
     </footer>
   </div>
 </template>
@@ -52,38 +54,45 @@ export default {
 };
 </script>
 <style scoped>
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,700|Work+Sans:300,600&display=swap");
+
 #About {
-  height: 150vh;
-  width: 450px;
+  height: 100%;
+  width: 100%;
   margin: 0 auto;
   background-color: rgb(241, 228, 231);
   display: flex;
   flex-direction: column;
-  background-image: url(../assets/graphics/graphics-header.svg),
-    url(../assets/graphics/graphics-footer.svg);
-  background-size: 100%, 100%;
-  background-repeat: no-repeat, no-repeat;
-  background-position: top, bottom;
 }
 
-h1,
-p,
-strong {
-  margin-left: 15%;
+.content {
   display: flex;
   text-align: left;
   justify-content: center;
   flex-direction: column;
-}
-h1 {
-  margin-top: 15%;
-  font-size: 3rem;
-}
-p {
-  font-size: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+h1 {
+  font-family: "PT Serif", serif;
+  font-size: 2rem;
+}
+p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+  line-height: 1.6em;
+}
+
+strong {
+  font-family: "Work Sans", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1.6em;
+}
 footer {
+  background-color: rgb(241, 228, 231);
   text-align: center;
 }
 
