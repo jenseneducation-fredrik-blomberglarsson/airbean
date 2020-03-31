@@ -1,10 +1,8 @@
 <template>
   <div id="Home">
-    <div id="homeImgContainer">
-      <img src="@/assets/graphics/intro-graphic-left.svg" alt="left" />
-      <img src="@/assets/graphics/airbean-landing.svg" />
-      <img src="@/assets/graphics/intro-graphic-right.svg" alt="left" />
-    </div>
+    <img id="left" src="@/assets/graphics/intro-graphic-left.svg" alt="left" />
+    <img id="center" src="@/assets/graphics/airbean-landing.svg" />
+    <img id="right" src="@/assets/graphics/intro-graphic-right.svg" alt="left" />
   </div>
 </template>
 <script>
@@ -12,22 +10,37 @@ export default {
   name: "Home",
   mounted() {
     setTimeout(() => {
-      this.$router.push("/menu");
+      this.$router.replace("/menu");
     }, 2500);
   }
 };
 </script>
 <style scoped>
 #Home {
-  display: flex;
   background-color: rgb(61, 126, 98);
-}
-
-#homeImgContainer {
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  background-color: rgb(61, 126, 98);
+}
+
+#left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+}
+#right {
+  position: absolute;
+  top: 10;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+}
+#center {
+  width: 14em;
 }
 </style>
