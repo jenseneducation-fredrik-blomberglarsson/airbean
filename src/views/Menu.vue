@@ -36,6 +36,7 @@ export default {
 <style scoped>
 #menu {
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   background-color: rgb(241, 228, 231);

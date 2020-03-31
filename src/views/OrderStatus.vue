@@ -58,6 +58,10 @@ p {
   color: white;
 }
 
+strong {
+  font-weight: 900;
+}
+
 h1 {
   font-family: "PT Serif", serif;
   text-align: center;
@@ -81,5 +85,6 @@ h3 {
 
 #button {
   margin-top: 2em;
+  margin-bottom: 3em;
 }
 </style>
