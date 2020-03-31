@@ -14,8 +14,7 @@ const routes = [
   {
     path: "/status",
     name: "OrderStatus",
-    component: OrderStatus,
-    props: true
+    component: OrderStatus
   }
 ];
 

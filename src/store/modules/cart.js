@@ -1,13 +1,27 @@
 const state = {
-  cart: []
+  cart: [],
+  orderNum: "",
+  orderEta: 0
 };
 
 const mutations = {
   setCart(state, cart) {
     state.cart = cart;
+  },
+  setOrderNum(state, orderNum) {
+    state.orderNum = orderNum;
+  },
+  setOrderEta(state, orderEta) {
+    state.orderEta = orderEta;
   }
 };
 const actions = {
+  storeOrderNum({ commit }, orderNum) {
+    commit("setOrderNum", orderNum);
+  },
+  storeOrderEta({ commit }, eta) {
+    commit("setOrderEta", eta);
+  },
   addMenuItem({ state, commit }, item) {
     let cart = state.cart;
     cart.push(item);
@@ -23,7 +37,9 @@ const actions = {
   }
 };
 const getters = {
-  cart: state => state.cart
+  cart: state => state.cart,
+  orderNum: state => state.orderNum,
+  orderEta: state => state.orderEta
 };
 
 export default {

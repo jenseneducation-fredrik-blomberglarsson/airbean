@@ -48,14 +48,13 @@ export default {
   },
   computed: mapGetters(["cart"]),
   methods: {
-    ...mapActions(["showBag"]),
+    ...mapActions(["showBag", "storeOrderEta", "storeOrderNum"]),
 
     async onButtonClick() {
       const order = await placeOrder();
-      this.$router.push({
-        name: "OrderStatus",
-        params: { orderNum: order.orderNr, orderTime: order.eta }
-      });
+      this.storeOrderNum(order.orderNr);
+      this.storeOrderEta(order.eta);
+      this.$router.push({ name: "OrderStatus" });
     },
     countCart() {
       let result = [];

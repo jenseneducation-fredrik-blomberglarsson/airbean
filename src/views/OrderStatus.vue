@@ -13,7 +13,7 @@
       <br />är på väg!
     </h1>
     <div id="orderTime">
-      <strong style="margin-right: 0.5em;">{{orderTime}}</strong>
+      <strong style="margin-right: 0.5em;">{{orderEta}}</strong>
 
       <p>minuter</p>
     </div>
@@ -23,12 +23,10 @@
 </template>
 <script>
 import Button from "../components/Button.vue";
+import { mapGetters } from "vuex";
 export default {
   name: "OrderStatus",
-  props: {
-    orderNum: String,
-    orderTime: Number
-  },
+  computed: mapGetters(["orderNum", "orderEta"]),
   components: {
     Button
   },
