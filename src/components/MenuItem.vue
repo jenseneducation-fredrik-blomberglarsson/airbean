@@ -1,7 +1,6 @@
 <template>
   <div id="menuItem">
     <aside @click="addMenuItem(item)">
-      <!-- <aside class="addItem" @click="addItem"> -->
       <img class="add" src="./../assets/graphics/add.svg" alt />
     </aside>
     <div class="items">
@@ -24,7 +23,7 @@ export default {
 <style scoped>
 #menuItem {
   display: grid;
-  grid-template-columns: 5rem 1fr 3.5rem;
+  grid-template-columns: 5rem 1fr 3rem;
   grid-template-rows: 2rem 2rem;
   margin: 0.5rem;
 }
@@ -39,16 +38,18 @@ export default {
   background-color: black;
 }
 .title {
+  font-family: "PT Serif", serif;
   font-size: 1.5rem;
   margin: 0;
   padding: 0;
 }
 .price {
+  margin: 0 1.5rem;
   font-size: 1.5rem;
   text-align: right;
-  margin-top: -15%;
 }
 .desc {
+  font-family: "Work Sans", sans-serif;
   margin: 0;
   padding: 0;
 }

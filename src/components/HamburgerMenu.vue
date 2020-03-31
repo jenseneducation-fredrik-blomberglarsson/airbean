@@ -21,9 +21,10 @@ export default {
 <style scoped>
 #hamburgerMenu {
   height: 150vh;
-  width: 450px;
+  width: 100%;
   position: absolute;
   top: 0;
+  left: 0;
   padding: 0;
   background: rgb(36, 8, 8);
 }
@@ -40,11 +41,11 @@ export default {
   width: 20%;
 }
 .close {
-  margin-bottom: 60%;
+  margin-bottom: 10%;
   cursor: pointer;
   margin-left: 5%;
   margin-top: 5%;
-  width: 12%;
+  width: 4rem;
   border-radius: 10px;
   background-color: white;
 }
