@@ -16,12 +16,13 @@
         <div class="totalAndPrice">
           <h3>Total</h3>
           <div class="spacing" />
-          <h3>{{totalPrice()}} kr</h3>
+          <h3>{{ totalPrice() }} kr</h3>
         </div>
         <div class="priceInfo">
           <p>inkl moms + drönarleverans</p>
         </div>
         <div class="buttonContainer">
+          <p style="color: red;" v-if="errmsg !== null">{{ errmsg }}</p>
           <Button
             title="Take my money!"
             backgroundColor="#2d2d2d"
@@ -36,7 +37,6 @@
 <script>
 import CartItem from "../components/CartItem.vue";
 import Button from "../components/Button.vue";
-import { placeOrder } from "../api";
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 
@@ -46,14 +46,26 @@ export default {
     CartItem,
     Button
   },
+  data() {
+    return {
+      errmsg: null
+    };
+  },
+
   computed: mapGetters(["cart"]),
   methods: {
-    ...mapActions(["showBag", "storeOrderEta", "storeOrderNum"]),
+    ...mapActions(["showBag", "placeOrder"]),
 
     async onButtonClick() {
-      const order = await placeOrder();
-      this.storeOrderNum(order.orderNr);
-      this.storeOrderEta(order.eta);
+      if (this.cart.length === 0) {
+        this.errmsg = "Cart is empty!";
+        setTimeout(() => {
+          this.errmsg = null;
+        }, 2000);
+        return;
+      }
+      await this.placeOrder();
+
       this.$router.push({ name: "OrderStatus" });
     },
     countCart() {
@@ -174,7 +186,13 @@ p {
 
 .buttonContainer {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin: 2em;
+}
+
+.buttonContainer p {
+  font-family: "Work Sans", sans-serif;
 }
 </style>

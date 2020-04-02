@@ -3,7 +3,7 @@
     <div id="orderNumber">
       <p style="margin-right: 0.5em;">Ordernummer</p>
 
-      <strong>{{orderNum}}</strong>
+      <strong>{{ orderNum }}</strong>
     </div>
     <div id="droneImg">
       <img src="@/assets/graphics/drone.svg" />
@@ -13,12 +13,16 @@
       <br />är på väg!
     </h1>
     <div id="orderTime">
-      <strong style="margin-right: 0.5em;">{{orderEta}}</strong>
+      <strong style="margin-right: 0.5em;">{{ orderEta }}</strong>
 
       <p>minuter</p>
     </div>
     <div class="spacing" />
-    <Button title="Ok, cool!" background-color="white" v-bind:onClick="onButtonClick" />
+    <Button
+      title="Ok, cool!"
+      background-color="white"
+      v-bind:onClick="onButtonClick"
+    />
   </div>
 </template>
 <script>
@@ -32,7 +36,7 @@ export default {
   },
   methods: {
     onButtonClick() {
-      this.$router.replace("/");
+      this.$router.replace("/menu");
     }
   }
 };

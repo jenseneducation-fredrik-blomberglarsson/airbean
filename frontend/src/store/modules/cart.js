@@ -1,3 +1,5 @@
+import { placeOrder } from "../../api";
+
 const state = {
   cart: [],
   orderNum: "",
@@ -16,12 +18,12 @@ const mutations = {
   }
 };
 const actions = {
-  storeOrderNum({ commit }, orderNum) {
-    commit("setOrderNum", orderNum);
+  async placeOrder({ commit }) {
+    const order = await placeOrder();
+    commit("setOrderEta", order.eta);
+    commit("setOrderNum", order.orderNr);
   },
-  storeOrderEta({ commit }, eta) {
-    commit("setOrderEta", eta);
-  },
+
   addMenuItem({ state, commit }, item) {
     let cart = state.cart;
     cart.push(item);
