@@ -20,13 +20,18 @@ export default {
 
 <style scoped>
 #hamburgerMenu {
-  height: 150vh;
+  height: 100vh;
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   padding: 0;
   background: rgb(36, 8, 8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 9999;
+  cursor: default;
 }
 .router-link {
   padding: 1rem;
@@ -41,12 +46,13 @@ export default {
   width: 20%;
 }
 .close {
-  margin-bottom: 10%;
+  position: fixed;
+  top: 1em;
+  left: 1em;
   cursor: pointer;
-  margin-left: 5%;
-  margin-top: 5%;
-  width: 4rem;
-  border-radius: 10px;
-  background-color: white;
+  background: white;
+  width: 1.5em;
+  padding: 1rem;
+  border-radius: 50px;
 }
 </style>
