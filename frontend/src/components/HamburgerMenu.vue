@@ -1,11 +1,26 @@
 <template>
   <nav id="hamburgerMenu" v-if="showHamburger">
-    <img class="close" src="./../assets/graphics/close.svg" alt="close" @click="show" />
-    <router-link v-on:click.native="show" to="/menu" class="router-link">Meny</router-link>
+    <img
+      class="close"
+      src="./../assets/graphics/close.svg"
+      alt="close"
+      @click="show"
+    />
+    <router-link v-on:click.native="show" to="/menu" class="router-link"
+      >Meny</router-link
+    >
     <hr class="hr" />
-    <router-link v-on:click.native="show" to="/about" class="router-link">Vårt Kaffe</router-link>
-    <hr class="hr" />
-    <router-link v-on:click.native="show" to="/status" class="router-link">Orderstatus</router-link>
+    <router-link v-on:click.native="show" to="/about" class="router-link"
+      >Vårt Kaffe</router-link
+    >
+    <hr v-if="orderNum !== ''" class="hr" />
+    <router-link
+      v-on:click.native="show"
+      to="/status"
+      v-if="orderNum !== ''"
+      class="router-link"
+      >Orderstatus</router-link
+    >
   </nav>
 </template>
 
@@ -14,7 +29,7 @@ import { mapGetters, mapActions } from "vuex";
 export default {
   name: "HamburgerMenu",
   methods: mapActions(["show"]),
-  computed: mapGetters(["showHamburger"])
+  computed: mapGetters(["showHamburger", "orderNum"])
 };
 </script>
 
