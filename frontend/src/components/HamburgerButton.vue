@@ -1,5 +1,5 @@
 <template>
-  <nav class="hamburgerIcon">
+  <nav class="hamburgerButton">
     <img
       class="hamburgerImage"
       src="./../assets/graphics/navicon.svg"
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-.hamburgerIcon {
+.hamburgerButton {
   position: fixed;
   top: 1em;
   left: 1em;

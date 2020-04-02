@@ -1,8 +1,8 @@
 <template>
   <div id="menu">
     <img src="@/assets/graphics/graphics-header.svg" />
-    <HamburgerIcon class="hamburgerIconImage" />
-    <CartIcon class="cartIconImage" />
+    <HamburgerButton class="hamburgerButton" />
+    <CartIcon class="cartButton" />
     <h1>Meny</h1>
 
     <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
@@ -17,14 +17,14 @@
 
 <script>
 import Cart from "@/components/Cart.vue";
-import HamburgerIcon from "@/components/HamburgerIcon";
+import HamburgerButton from "@/components/HamburgerButton";
 import CartIcon from "@/components/CartIcon";
 import MenuItem from "@/components/MenuItem";
 import { mapGetters } from "vuex";
 import { mapActions } from "vuex";
 export default {
   name: "Menu",
-  components: { HamburgerIcon, CartIcon, MenuItem, Cart },
+  components: { HamburgerButton, CartIcon, MenuItem, Cart },
   computed: mapGetters(["menu", "showCart"]),
   methods: {
     ...mapActions(["fetchMenu"])
@@ -51,11 +51,11 @@ h1 {
   text-align: center;
 }
 
-.cartIconImage {
+.cartButton {
   z-index: 1;
 }
 
-.hamburgerIconImage {
+.hamburgerButton {
   z-index: 2;
 }
 </style>

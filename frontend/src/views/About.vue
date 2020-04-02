@@ -3,7 +3,7 @@
     <img id="footerImg" src="@/assets/graphics/graphics-header.svg" />
     <section class="content">
       <div class="imgHeader"></div>
-      <HamburgerIcon />
+      <HamburgerButton />
       <h1>Vårt Kaffe</h1>
       <strong>
         Pumpkin spice mug, barista cup, sit
@@ -47,10 +47,10 @@
   </div>
 </template>
 <script>
-import HamburgerIcon from "@/components/HamburgerIcon";
+import HamburgerButton from "@/components/HamburgerButton";
 export default {
   name: "About",
-  components: { HamburgerIcon }
+  components: { HamburgerButton }
 };
 </script>
 <style scoped>
