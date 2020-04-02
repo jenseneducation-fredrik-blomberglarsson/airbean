@@ -1,7 +1,11 @@
 <template>
   <nav class="cartIcon">
-    <img class="cartImage" src="./../assets/graphics/bag.svg" @click="showBag" />
-    <span :style="{opacity: (cart.length > 0 ? 1 : 0)}">{{cart.length}}</span>
+    <img
+      class="cartImage"
+      src="./../assets/graphics/bag.svg"
+      @click="onIconClick"
+    />
+    <span :style="{ opacity: cart.length > 0 ? 1 : 0 }">{{ cart.length }}</span>
   </nav>
 </template>
 
@@ -10,7 +14,12 @@ import { mapActions } from "vuex";
 import { mapGetters } from "vuex";
 export default {
   computed: mapGetters(["cart"]),
-  methods: mapActions(["showBag"])
+  methods: {
+    ...mapActions(["toggleBag"]),
+    onIconClick() {
+      this.toggleBag();
+    }
+  }
 };
 </script>
 

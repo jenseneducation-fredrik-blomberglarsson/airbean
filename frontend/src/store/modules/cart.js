@@ -22,6 +22,7 @@ const actions = {
     const order = await placeOrder();
     commit("setOrderEta", order.eta);
     commit("setOrderNum", order.orderNr);
+    commit("setCart", []);
   },
 
   addMenuItem({ state, commit }, item) {

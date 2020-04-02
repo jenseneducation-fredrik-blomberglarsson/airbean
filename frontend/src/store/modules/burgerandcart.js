@@ -6,8 +6,8 @@ const actions = {
   show({ commit }) {
     commit("show");
   },
-  showBag({ commit }) {
-    commit("showBag");
+  toggleBag({ commit }) {
+    commit("toggleBag");
   }
 };
 const getters = {
@@ -18,7 +18,7 @@ const mutations = {
   show(state) {
     state.showHamburger = !state.showHamburger;
   },
-  showBag(state) {
+  toggleBag(state) {
     state.showCart = !state.showCart;
   }
 };

@@ -22,7 +22,7 @@
           <p>inkl moms + drönarleverans</p>
         </div>
         <div class="buttonContainer">
-          <p style="color: red;" v-if="errmsg !== null">{{ errmsg }}</p>
+          <p style="color: red;" v-if="errMsg !== null">{{ errMsg }}</p>
           <Button
             title="Take my money!"
             backgroundColor="#2d2d2d"
@@ -48,26 +48,29 @@ export default {
   },
   data() {
     return {
-      errmsg: null
+      errMsg: null
     };
   },
 
   computed: mapGetters(["cart"]),
   methods: {
-    ...mapActions(["showBag", "placeOrder"]),
+    ...mapActions(["toggleBag", "placeOrder"]),
 
     async onButtonClick() {
       if (this.cart.length === 0) {
-        this.errmsg = "Cart is empty!";
+        this.errMsg = "Cart is empty!";
         setTimeout(() => {
-          this.errmsg = null;
+          this.errMsg = null;
         }, 2000);
         return;
       }
       await this.placeOrder();
 
       this.$router.push({ name: "OrderStatus" });
+
+      this.toggleBag();
     },
+
     countCart() {
       let result = [];
       this.cart.forEach(item => {
