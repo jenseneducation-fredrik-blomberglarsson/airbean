@@ -35,7 +35,6 @@ export default {
   position: fixed;
   top: 1em;
   right: 1em;
-  z-index: 1;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;

@@ -1,7 +1,7 @@
 <template>
   <nav class="hamburgerIcon">
     <img
-      class="HamburgerImage"
+      class="hamburgerImage"
       src="./../assets/graphics/navicon.svg"
       alt="hamburgerImage"
       @click="show"
@@ -23,13 +23,16 @@ export default {
 </script>
 
 <style scoped>
-.HamburgerImage {
+.hamburgerIcon {
   position: fixed;
   top: 1em;
   left: 1em;
   cursor: pointer;
   background: white;
+  width: 1.5em;
   padding: 1rem;
-  border-radius: 20px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
 }
 </style>

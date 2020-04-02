@@ -1,8 +1,8 @@
 <template>
   <div id="menu">
     <img src="@/assets/graphics/graphics-header.svg" />
-    <HamburgerIcon class="hamburgerImage" />
-    <CartIcon />
+    <HamburgerIcon class="hamburgerIconImage" />
+    <CartIcon class="cartIconImage" />
     <h1>Meny</h1>
 
     <MenuItem class="menuItems" v-for="item in menu" :key="item.id" :item="item" />
@@ -51,7 +51,11 @@ h1 {
   text-align: center;
 }
 
-.hamburgerImage {
+.cartIconImage {
   z-index: 1;
+}
+
+.hamburgerIconImage {
+  z-index: 2;
 }
 </style>
